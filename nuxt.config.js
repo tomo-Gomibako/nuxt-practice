@@ -60,5 +60,7 @@ module.exports = {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  srcDir: './client/',
+  serverMiddleware: ['~~/api/']
 }
