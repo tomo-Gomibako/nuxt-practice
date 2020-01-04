@@ -1,12 +1,22 @@
 <template>
-  <div>{{ res }}</div>
+  <div>
+    <div>{{ res }}</div>
+    <button @click="fetch">
+      ping
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
   computed: {
     res () {
-      return ''
+      return this.$store.state.ping.response
+    }
+  },
+  methods: {
+    fetch () {
+      this.$store.dispatch('ping/fetch')
     }
   }
 }
