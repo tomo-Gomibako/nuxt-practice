@@ -1,17 +1,12 @@
-const Koa = require('koa')
-const Router = require('koa-router')
+const express = require('express')
 
-const app = new Koa()
-const router = new Router()
+const app = express()
 
-router.get('/ping', (ctx) => {
-  ctx.body = 'pong'
+app.get('/ping', function (req, res) {
+  res.send('pong')
 })
-
-app.use(router.routes())
-app.use(router.allowedMethods())
 
 module.exports = {
   path: '/api/',
-  handler: app.callback()
+  handler: app
 }
