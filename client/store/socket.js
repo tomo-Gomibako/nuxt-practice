@@ -1,7 +1,7 @@
 import io from 'socket.io-client'
 
-const socket = io({ path: '/api/socket.io' })
-console.log(socket.connected)
+// const socket = io({ path: '/api/socket.io' })
+const socket = io()
 
 export const state = () => ({
   timeline: []
@@ -17,5 +17,5 @@ export const actions = {
 }
 
 socket.on('connect', (socket) => {
-  console.log('hoge')
+  console.log('connected!')
 })

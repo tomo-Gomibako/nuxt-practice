@@ -4,13 +4,13 @@ const socket = require('socket.io')
 
 const app = express()
 
-app.get('/ping', function (req, res) {
+app.get('/ping', (req, res) => {
   res.send('pong')
 })
 
 const server = http.Server(app)
 const io = socket(server)
-io.path('/api')
+// io.path('/api')
 
 io.on('connection', (socket) => {
   console.log(socket)
